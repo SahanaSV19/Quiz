@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container2 {
+            /* background-color: white; */
+            position: relative;
+            
+
+            /* top: 1000px; */
+        }
+
+        .carousel {
+            height: 500px;
+            perspective: 250px;
+            
+        }
+
+        .carousel .carousel-item {
+            width: 300px;
+            border: 2px solid black;
+            background-color: beige;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel .indicators .indicator-item {
+            background: black;
+        }
+
+        body {
+            background-color: #512B81;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <nav style="height: 15vh; width: 100%; background-color: #4477CE; display: flex; justify-content: space-around;">
+        <h3 style="align-items: flex-start;">QUIZzzzzzzz</h3>
+        <button id="logoutbtn" style="height: 50px; width: 100px;">Logout</button>
+        <!-- <button  id="log" style="align-items: flex-end; height: 50px;width: 250px; border: none; background-color: transparent;" >Logout</button> -->
+    </nav>
+    <div class="container2">
+        <div class="carousel">
+            <button class="carousel-item">
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 1</h2>
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 2</h2>
+
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 3</h2>
+
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 4</h2>
+                    
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 5</h2>
+                        <p
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 6</h2>
+                    
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 7</h2>
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 8</h2>
+
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 9</h2>
+                    </div>
+                </div>
+            </button>
+            <button class="carousel-item" >
+                <div class="content">
+                    <div class="main-text">
+                        <h2>Quiz 10</h2>
+
+                    </div>
+                </div>
+            </button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.carousel').carousel({
+                    indicators: true
+                });
+                setInterval(function () {
+                    $('.carousel').carousel('next')
+                }, 3000);
+            });
+        </script>
+    </div>
+    <script src="./Quizes.js"></script>
+</body>
+
+</html>
