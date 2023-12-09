@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+
+        <div id="quizquestion"></div>
+        <button type="submit" id="sub">Submit</button>
+    </div>
+
+    <script>
+        let ul1 = document.querySelector("#quizquestion")
+        let ind = 0;
+        let title = "TakeTest"
+        let result = [];
+        let resCount = 0;
+        let buttonn = document.querySelector("#sub")
+        buttonn.addEventListener(("click"), () => {
+
+
+            let answers = document.querySelectorAll("#quizquestion input")
+
+            answers.forEach((element, i) => {
+                // console.log(element);6
+                if (element.checked) {
+                    result[resCount] = element.value;
+                    resCount++;
+                    // console.log(element.value);
+
+                }
+            });
+
+                 
+
+            let dataObj=result.map((element,index)=>{
+                return `{questionId:1,userChoice:${result[index]},quizId:2}`
+            });
+            window.location.href="http://127.0.0.1:5500/Result.html" 
+            
+        //rather than using below code we have reduced it into a single statement like above
+            // let dataObj = [
+            //     {
+            //         "questionId": 1,
+            //         "userChoice": result[0],
+            //         "quizId": 2
+            //     },
+            //     {
+            //         "questionId": 2,
+            //         "userChoice": result[1],
+            //         "quizId": 2
+            //     },
+            //     {
+            //         "questionId": 3,
+            //         "userChoice": result[2],
+            //         "quizId": 2
+            //     },
+            //     {
+            //         "questionId": 4,
+            //         "userChoice": result[3],
+            //         "quizId": 2
+            //     }
+            // ]
+        //
+        })
+        
+            ul1.innerHTML = `<h2  onclick=getAllQuizQuestions(${ind + 1})>${title}</h2>`
+
+
+        // in the opening tag of h2 we have used onclick to call the function
+
+        function getAllQuizQuestions(inde) {
+            fetch(`http://localhost:3000/api/question/allquestions/${inde}`, {
+                method: "GET",
+                credentials: "include"
+            }).then((re) => re.json()).then((x) => {
+
+                console.log(x.questions)
+                x.questions.forEach((element, inde) => {
+                    var a = document.createElement("div")
+
+
+
+                    a.innerHTML += `<div>
+                            <h2>${element.question} </h2>                     
+                            ${(element.choices.map((x, index) => {
+                        return a.innerHTML.append = `<input type="radio" name=${x.questionId} value=${index}><label for=${x.questionId}>${(x.choice).replace(/</g, "&lt").replace(/>/g, "&gt")}</label><br>
+                           
+                            `
+                    }).join(''))
+                        //map returns array hence we get commas in between array elements so we enclose everything within brackets ()
+                        }</div>`
+                    ul1.append(a)
+                })
+            })
+        }
+       
+    </script>
+</body>
+
+</html>

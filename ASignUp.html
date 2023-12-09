@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-image: url(https://cdn.pixabay.com/animation/2023/10/11/16/50/16-50-11-389_512.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+        }
+
+        #itable {
+            height: 400px;
+            width: 380px;
+            border: 2px solid black;
+            border-radius: 2%;
+            font-size: 20px;
+            padding: 20px;
+            background-color: whitesmoke;
+        }
+
+        .error-container {
+            border: 2px;
+            border-radius: 1% solid #ff3860;
+        }
+
+        #errormsg {
+            font-size: 12px;
+            height: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ff3860;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <table id="itable">
+            <tr>
+                <td colspan="2">
+                    <span style="font-size: xx-large; font-weight: bold;">Sign Up </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><span style="color: grey; font-size: small;">It's Quick and easy</span></td>
+            </tr>
+            <tr>
+                <td><label for="nam"> Username</label></td>
+                <td><input type="text" id="nam" style="height: 20px;"></td>
+            </tr>
+            <tr>
+                <td class="error-container" colspan="2"><span id="errormsg"></span></td>
+
+            </tr>
+            <tr>
+                <td><label for="email"> Mail</label></td>
+                <td><input type="email" id="email" style="height: 20px;"></td>
+            </tr>
+            <tr>
+                <td class="error-container" colspan="2"><span id="errormsg"></span></td>
+            </tr>
+            <tr>
+                <td><label for="num"> Number</label></td>
+                <td><input type="number" id="num" style="height: 20px;"></td>
+            </tr>
+            <tr>
+                <td class="error-container" colspan="2"><span id="errormsg"></span></td>
+            </tr>
+            <tr>
+                <td><label for="pass"> Password</label></td>
+                <td><input type="password" id="pass" style="height: 20px;"></td>
+            </tr>
+            <tr>
+                <td class="error-container" colspan="2"><span id="errormsg"></span></td>
+            </tr>
+            <tr>
+                <td><label for="cpass"> Confirm Password</label></td>
+                <td><input type="password" id="cpass" style="height: 20px;"></td>
+            </tr>
+            <tr>
+                <td class="error-container" colspan="2"><span id="errormsg"></span></td>
+            </tr>
+            <tr>
+                <td><button type="submit"
+                        style="height: 30px; width: 80px; background-color: #016A70; color: white; border-radius:8%;"
+                        id="sub">Submit</button></td>
+                <td><button type="reset"
+                        style="height: 30px; width: 80px; background-color: #016A70; color: white; border-radius:8%;">
+                        Reset</button></td>
+            </tr>
+        </table>
+    </form>
+    <script src="./ASignUp.js"></script>
+</body>
+
+</html>

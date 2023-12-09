@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background:linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        }
+        #iform{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20vh;
+            line-height: 8vh;
+        }
+        #itable2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            height: 55vh;
+            width: 25vw;            
+            border: 2px solid rgb(153, 152, 152);
+            /* box-shadow:rgba(128, 128, 128, 0.29); */
+            /* border-style: ; */
+            border-radius: 2%;
+            background-color: white;
+        }
+        .yeno_ondu{
+            height: 5vh;
+            width: 22vw;
+        }
+        .yeno_ondu1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #sub1{
+            height: 5vh;
+            width: 22.2vw;
+            background-color: #1640D6;
+            color: white;
+            font-size: medium;
+        }
+        #signup_button{
+            height: 5vh;
+            width: 11vw;
+            background-color: #54B435;
+            font-size: medium;
+        }
+        
+
+        #errormsg {
+            font-size: 12px;
+            height: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ff3860;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="iform">
+        <table id="itable2">
+            <tr>
+                <td><input type="email" id="mailUser" class="yeno_ondu" placeholder="  Email address"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><span id="errormsg"></span></td>
+
+            </tr>
+            <tr>
+                <td><input type="password" id="passUser" class="yeno_ondu" placeholder="  Password"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><span id="errormsg"></span></td>
+
+            </tr>
+            <tr>
+                <td class="yeno_ondu1"><button type="submit" id="sub1">Log in </button></td>
+            </tr>
+            <tr>
+                <td><h5 class="yeno_ondu1">Forgot Password?</h5></td>
+            </tr>
+            <tr>
+                <td class="yeno_ondu1"><button type="button" id="signup_button"><a href="./AdminSignUp.html" style="text-decoration: none; color:whitesmoke;">Create new account</a></button></td>
+            </tr>
+        </table>
+    </form>
+    <script src="./AdminLogin.js"></script>
+</body>
+</html>

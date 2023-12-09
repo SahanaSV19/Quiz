@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id ="subm">Click here</button>
+    <button onclick="result()">Check for Result</button>
+</body>
+<script>
+    let submi=document.querySelector("#subm")
+    let i = confirm("Do u want to Submit")
+    if(i==true)
+    {
+    submi.addEventListener("click",()=>{
+        complete()
+        async function complete() {
+        try {
+            const ques = await fetch(`http://localhost:3000/api/result/5`, {
+                    method: "POST",
+                    cache: "default",
+                    credentials: "include", 
+                }).then((e)=>{
+                    console.log(e);
+                });
+                
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    
+    })
+}
+else{
+    alert("Data not saved")
+}
+async function result() {
+            try {
+                const ques = await fetch(`http://localhost:3000/api/result/getallresults/6`, {
+                    method: "GET",
+                    cache: "default",
+                    credentials: "include", 
+                });
+                
+                const resultData = await ques.json();
+                console.log(resultData[0]);
+                console.log(""+resultData[0].totalQuestions);
+                console.log(resultData[0].correctAnswers);
+
+            } catch (error){
+                console.log(error);
+            }
+        } 
+</script>
+</html>
